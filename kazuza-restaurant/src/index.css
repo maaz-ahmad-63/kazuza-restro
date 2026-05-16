@@ -1,0 +1,114 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply transition-colors duration-300;
+  }
+
+  body {
+    @apply bg-luxury-black text-white font-jakarta;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-zodiak;
+  }
+}
+
+@layer components {
+  .luxury-btn {
+    @apply px-8 py-3 rounded-full font-semibold tracking-widest uppercase text-sm transition-all duration-300 hover:shadow-glow-strong;
+  }
+
+  .luxury-btn-gold {
+    @apply luxury-btn bg-luxury-gold text-luxury-black hover:scale-105;
+  }
+
+  .luxury-btn-outline {
+    @apply luxury-btn border-2 border-luxury-gold text-luxury-gold hover:bg-luxury-gold hover:text-luxury-black;
+  }
+
+  .luxury-card {
+    @apply bg-luxury-card rounded-3xl overflow-hidden shadow-luxury border border-white/5;
+  }
+
+  .luxury-section {
+    @apply py-24 px-8 md:px-16 lg:px-24;
+  }
+
+  .luxury-heading {
+    @apply text-5xl md:text-7xl font-zodiak font-bold tracking-tight;
+  }
+
+  .luxury-subheading {
+    @apply text-2xl md:text-3xl font-zodiak font-semibold;
+  }
+
+  .luxury-text {
+    @apply text-lg leading-relaxed text-gray-300;
+  }
+
+  .gold-tag {
+    @apply inline-block px-4 py-2 bg-luxury-gold/10 text-luxury-gold text-xs font-bold tracking-widest rounded-full border border-luxury-gold/30;
+  }
+
+  .glass {
+    @apply bg-black/40 backdrop-blur-xl border border-white/10;
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Remove scrollbar on webkit browsers */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d4af37;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #f4a460;
+}
+
+/* Gold accent color */
+.text-gold {
+  @apply text-luxury-gold;
+}
+
+/* Luxury glow effect */
+.glow-effect {
+  position: relative;
+}
+
+.glow-effect::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.3) 0%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(40px);
+  pointer-events: none;
+}
