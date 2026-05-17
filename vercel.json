@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "installCommand": "cd kazuza-restaurant && npm install --legacy-peer-deps",
+  "buildCommand": "cd kazuza-restaurant && npm run build",
+  "outputDirectory": "kazuza-restaurant/dist",
+  "headers": [
+    {
+      "source": "/assets/(.*)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
